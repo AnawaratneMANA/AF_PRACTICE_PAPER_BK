@@ -16,6 +16,14 @@ const createVehicle = async (req, res) => {
     }
 }
 
+//Get Vehicle details
+const GetAllVehicles  = async(req, res) => {
+    const vehicle = await Vehicle.find()
+        .then(data => {res.status(200).send({vehicles: data});})
+        .catch(error => {res.status(500).send({ vehicles: error});});
+}
+
 module.exports = {
-    createVehicle
+    createVehicle,
+    GetAllVehicles
 }

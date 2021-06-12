@@ -27,6 +27,9 @@ const getVehiclesInCategory =async (req, res) => {
 
 }
 
+//Implementing the trip charge calculation service.
+
+
 module.exports = {
     createCategories,
     getVehiclesInCategory
