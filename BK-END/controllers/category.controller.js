@@ -41,6 +41,7 @@ const CalculateTripCharge = async (req, res) => {
         const worker = new Worker("./calculations/chargeCalculationWorker.js", {workerData: {data:req.body}});
         worker.on('message',(data)=> {
             console.log("Work done" + data);
+            res.send("Total amount :" + data);
         })
 
         worker.on('error',(data)=> {
@@ -53,7 +54,6 @@ const CalculateTripCharge = async (req, res) => {
             console.log(data.message)
         })
     worker.postMessage("File that get passed.");
-    res.send("Request is processing, Will update shortly.");
 }
 
 module.exports = {
