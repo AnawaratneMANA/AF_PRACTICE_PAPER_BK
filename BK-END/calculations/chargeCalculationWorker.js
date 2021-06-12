@@ -1,4 +1,4 @@
-const {parentPort, isMainThread, workerData} = require("worker_threads");
+const {parentPort, workerData} = require("worker_threads");
     //Calculation will be done here.
     function calculationTripSum(){
         let total;

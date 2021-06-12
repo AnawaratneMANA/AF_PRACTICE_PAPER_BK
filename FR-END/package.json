@@ -1,0 +1,43 @@
+{
+  "name": "sliit-front-end",
+  "version": "1.0.0",
+  "description": "\"Exam Paper Answer\"",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "author": "\"Anawaratne M.A.N.A.\"",
+  "license": "ISC",
+  "devDependencies": {
+    "@materials-ui/core": "0.0.27",
+    "parcel": "2.0.0-beta.2",
+    "react-uuid": "^1.0.2",
+    "reactstrap": "^8.9.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "redux-thunk": "^2.3.0",
+    "use-deep-compare-effect": "^1.6.1",
+    "uuid": "^8.3.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

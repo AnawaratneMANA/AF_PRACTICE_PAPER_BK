@@ -1,0 +1,64 @@
+@mixin font-headers{
+  font-family: Lato;
+  color: black;
+  font-weight: bold;
+}
+
+@mixin border-modern {
+  border-radius: 10px;
+}
+
+@mixin border-modern-input {
+  border-radius: 10px;
+  border: 0.5px solid #969696;
+  align-content: center;
+  padding:4px;
+  margin: 5px;
+}
+
+.label {
+@include font-headers;
+}
+
+.edit-user {
+  @include border-modern;
+  background-color: #a3def6;
+  padding: 20px;
+  max-width: 400px;
+  margin: 10px;
+
+}
+
+.input-field {
+  @include border-modern-input;
+  @include font-headers;
+}
+
+.btn-submit {
+  @include border-modern-input;
+  @include font-headers;
+  color: white;
+  background-color: #5454e0;
+  padding: 10px;
+
+  &-cancel {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.header-section {
+  .main-head{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: SF Pro Display;
+  }
+  .secondary-head {
+    font-size: 12px;
+    color: #5d5d5d;
+    margin-top: -12px;
+  }
+}
+
+

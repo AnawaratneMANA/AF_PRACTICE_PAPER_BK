@@ -1,7 +1,7 @@
 const Category = require('../models/category.model');
 const mongo = require('mongodb').MongoClient;
 const objectId = require('mongodb').ObjectID;
-const {Worker, isMainThread} = require('worker_threads');
+const {Worker} = require('worker_threads');
 
 const createCategories = async (req, res) => {
     if (req.body) {
@@ -54,6 +54,11 @@ const CalculateTripCharge = async (req, res) => {
             console.log(data.message)
         })
     worker.postMessage("File that get passed.");
+}
+
+//View vehicles in each category.
+const vehiclesInEachCategory = async (req, res) =>{
+
 }
 
 module.exports = {
