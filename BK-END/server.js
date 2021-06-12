@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 //API Files
 const vehicleAPI = require('./api/vehicle.api');
+const categoryAPI = require('./api/category.api');
 
 //Configurations
 dotenv.config();
@@ -31,6 +32,7 @@ mongoose.connect(MONGO_URL, {
 
 //Calling APIs
 app.use('/vehicle', vehicleAPI());
+app.use('/category', categoryAPI());
 
 //Connect to the Database.
 app.listen(PORT, ()=> {
