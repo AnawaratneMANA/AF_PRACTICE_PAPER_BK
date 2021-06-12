@@ -8,6 +8,7 @@ const {parentPort, workerData} = require("worker_threads");
     parentPort.on('message', (data)=> {
         //data = data + " Changed a little bit";
         const total = calculationTripSum();
-        parentPort.postMessage(total);
+        parentPort.postMessage(total);//send to parent
+        console.log(data);
     });
 
