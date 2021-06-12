@@ -26,7 +26,6 @@ export const AddUser = () => {
 
     return (
         <div className="edit-user">
-
             <div className="header-section">
                 <h2 className="main-head">Add Users</h2>
                 <h4 className="secondary-head">Insert Operation.</h4>

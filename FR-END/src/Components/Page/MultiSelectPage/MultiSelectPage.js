@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import './editAndView.css'
-import {EditUser} from "../EditUser/editUser";
-import {UserList} from "../UserList/userList";
-import UserDataService from '../../Service/userDataService';
+import './MultiSelectPage.css'
+import {EditUser} from "../../EditUser/editUser";
+import {UserList} from "../../UserList/userList";
+import UserDataService from '../../../Service/userDataService';
 
-export const EditAndView = () => {
+export const MultiSelectPage = () => {
 
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState([]);
