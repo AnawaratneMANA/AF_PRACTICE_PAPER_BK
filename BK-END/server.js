@@ -30,7 +30,7 @@ mongoose.connect(MONGO_URL, {
 }))
 
 //Calling APIs
-app.use('./vehicle', vehicleAPI());
+app.use('/vehicle', vehicleAPI());
 
 //Connect to the Database.
 app.listen(PORT, ()=> {
