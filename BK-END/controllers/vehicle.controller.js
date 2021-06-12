@@ -15,3 +15,7 @@ const createVehicle = async (req, res) => {
         )
     }
 }
+
+module.exports = {
+    createVehicle
+}
