@@ -8,6 +8,7 @@ import {AddItemPage} from "./Components/Page/AddItemPage/AddItemPage";
 import {MultiSelectPage} from "./Components/Page/MultiSelectPage/MultiSelectPage";
 import {CalculationPage} from "./Components/Page/CalculationPage/Calculation";
 import {About} from "./Components/About/About";
+import {AddLoads} from "./Components/AddLoads/AddLoads";
 function App() {
     return (
             <div className="background">
@@ -15,6 +16,7 @@ function App() {
                     <Route component={Home}/>
                     <Switch>
                         <Route exact path="/" component={About}/>
+                        <Route exact path="/addLoads" component={AddLoads}/>
                         <Route exact path="/add" component={AddItemPage}/>
                         <Route exact path="/edit/:id" component={EditAndView}/>
                         <Route exact path="/multi" component={MultiSelectPage}/>

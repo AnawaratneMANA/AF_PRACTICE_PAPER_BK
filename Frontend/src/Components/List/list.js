@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import './userList.css'
+import './list.css'
 import {Button} from "@material-ui/core";
-export const UserList = ({users, sendSelectedUser, deleteUser}) => {
+export const List = ({array, sendSelectedUser, deleteUser}) => {
 
     useEffect(() => {
 
-    }, [users])
+    }, [array])
 
     //Testing Array with Dummy values.
     const products = [
@@ -33,11 +33,10 @@ export const UserList = ({users, sendSelectedUser, deleteUser}) => {
                     </tr>
                     </thead>
                     <tbody>
-                    {users.map((user) => (
+                    {array.map((item) => (
                         <tr>
-                            <td>{user._id}</td>
-                            <td>{user.firstName}</td>
-                            <td><Button onClick={() => sendSelectedUser(user)}>Edit</Button></td>
+                            <td>{item._id}</td>
+                            <td>{item.name}</td>
                             <td><Button onClick={() => deleteUser(user)}>Delete</Button></td>
                         </tr>
                         )

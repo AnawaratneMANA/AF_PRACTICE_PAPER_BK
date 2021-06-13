@@ -52,6 +52,8 @@ export const AddVehicle = () => {
                 <button data-testid="sub-btn" className="btn-submit" type="submit">Add</button>
                 <Link to="/" className="btn-submit btn-submit-cancel">Cancel</Link>
             </form>
+
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './MultiSelectPage.css'
 import {EditUser} from "../../EditUser/editUser";
-import {UserList} from "../../UserList/userList";
+import {List} from "../../List/list";
 import UserDataService from '../../../Service/vehicleDataService';
 
 export const MultiSelectPage = () => {
@@ -61,7 +61,7 @@ export const MultiSelectPage = () => {
     return (
         <div className="container">
             <EditUser selectedUser={selectedUser} updateUser={updateUser} setSelectedUser={setSelectedUser}  clear={clear}/>
-            <UserList users={users} sendSelectedUser={sendSelectedUser} deleteUser={deleteUser}/>
+            <List users={users} sendSelectedUser={sendSelectedUser} deleteUser={deleteUser}/>
         </div>
     )
 }
