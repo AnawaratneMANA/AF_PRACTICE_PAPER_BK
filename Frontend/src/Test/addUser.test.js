@@ -16,6 +16,6 @@ describe ( 'Testing Index file that contain a form', () => {
 
     it('should render Title' , () => {
         expect(getByTestId(container ,'add-user-comp')).toBeTruthy();
-        expect(getByTestId(container, 'header-id').textContent).toBe('Add Users');
+        expect(getByTestId(container, 'header-id').textContent).toBe('Add Vehicle');
     });
 });
