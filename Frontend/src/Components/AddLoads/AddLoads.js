@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './AddLoads.css'
 import Select from "react-select";
-import List from "reactstrap/es/List";
+import {List} from "../List/list";
 import LoadDataService from "../../Service/loadDataService";
-import UserDataService from "../../Service/vehicleDataService";
+import vehicleDataService from "../../Service/vehicleDataService";
+import {LoadList} from "../LoadList/LoadList";
 export const AddLoads = () => {
 
     const [loadData, setLoadData] = useState({
@@ -53,7 +54,7 @@ export const AddLoads = () => {
 
     const deleteUser = (object) => {
         console.log(object._id)
-        UserDataService.deleteVehicle(object._id).then(
+        vehicleDataService.deleteVehicle(object._id).then(
             response => {
                 console.log(response);
                 retrieveValues();
@@ -71,6 +72,7 @@ export const AddLoads = () => {
     ]
 
     return (
+        <div>
         <div className="edit-user" data-testid="add-user-comp">
             <div className="header-section">
                 <h2 className="main-head" data-testid="header-id">Add Loads</h2>
@@ -132,10 +134,10 @@ export const AddLoads = () => {
                 <button data-testid="sub-btn" className="btn-submit" type="submit">Add</button>
                 <Link to="/" className="btn-submit btn-submit-cancel">Cancel</Link>
             </form>
-
-            <List array={loadData} deleteuser={deleteUser}/>
-
-
         </div>
+            <LoadList array={loadData} deleteuser={deleteUser}/>
+        </div>
+
+
     )
 }

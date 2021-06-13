@@ -61,7 +61,7 @@ export const MultiSelectPage = () => {
     return (
         <div className="container">
             <EditUser selectedUser={selectedUser} updateUser={updateUser} setSelectedUser={setSelectedUser}  clear={clear}/>
-            <List users={users} sendSelectedUser={sendSelectedUser} deleteUser={deleteUser}/>
+            {/*<List users={users} sendSelectedUser={sendSelectedUser} deleteUser={deleteUser}/>*/}
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import './list.css'
+import './LoadList.css'
 import {Button} from "@material-ui/core";
-export const List = ({array, sendSelectedUser, deleteUser}) => {
+export const LoadList = ({array, sendSelectedUser, deleteUser}) => {
 
     useEffect(() => {
 
@@ -18,8 +18,8 @@ export const List = ({array, sendSelectedUser, deleteUser}) => {
     return (
         <div className="edit-user-table">
             <div className="header-section">
-                <h2 className="main-head">Preview And Edit</h2>
-                <h4 className="secondary-head">Update.</h4>
+                <h2 className="main-head">Load View.</h2>
+                <h4 className="secondary-head">Insert Operation.</h4>
             </div>
 
             <div className="tableFixHead">
@@ -33,12 +33,11 @@ export const List = ({array, sendSelectedUser, deleteUser}) => {
                     </tr>
                     </thead>
                     <tbody>
-                    {array.map((item) => (
-                        <tr>
-                            <td>{item._id}</td>
-                            <td>{item.name}</td>
-                            <td><Button onClick={() => deleteUser(item)}>Delete</Button></td>
-                        </tr>
+                    {products.map((item) => (
+                            <tr>
+                                <td>{item._id}</td>
+                                <td>{item.name}</td>
+                            </tr>
                         )
                     )}
                     </tbody>

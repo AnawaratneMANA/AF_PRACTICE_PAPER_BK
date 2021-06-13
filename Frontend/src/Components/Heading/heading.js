@@ -15,8 +15,6 @@ export const Heading = () => {
                         <div className="navbar-nav">
                             <Link className="nav-link" to ="/add">Add Vehicles</Link>
                             <Link className="nav-link" to ="/addLoads">Add Loads</Link>
-                            <Link className="nav-link" to ="/edit/id">Edit User & Show</Link>
-                            <Link className="nav-link" to ="/multi">Multiple Select</Link>
                             <Link className="nav-link" to ="/calculation">Calculation Page</Link>
                         </div>
                     </div>

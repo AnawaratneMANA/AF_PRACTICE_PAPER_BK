@@ -3,6 +3,7 @@ import './AddItemsPage.css'
 import {AddVehicle} from "../../AddVehicle/addVehicle";
 import {List} from "../../List/list";
 import VehiclesDetailsService from "../../../Service/vehicleDataService";
+import UserDataService from "../../../Service/vehicleDataService";
 
 export const AddItemPage = () => {
 
@@ -21,12 +22,23 @@ export const AddItemPage = () => {
         });
     }
 
+    const deleteUser = (object) => {
+        console.log(object._id)
+        VehiclesDetailsService.deleteVehicle(object._id).then(
+            response => {
+                console.log(response);
+                retrieveValues();
+            }
+        ).catch(e => {
+            console.log(e);
+        })
+    }
+
     return (
         <div className="container bg-transparent">
             <AddVehicle/>
-            <List array={vehicles}/>
+            <List array={vehicles} deleteUser={deleteUser}/>
             <br/>
-
         </div>
 
     )
