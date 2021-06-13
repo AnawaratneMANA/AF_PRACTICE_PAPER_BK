@@ -16,6 +16,8 @@ export const AddLoads = () => {
         vehicles: []
     });
 
+    const [loads, setLoads] = useState([]);
+
     useEffect(()=> {
        retrieveValues();
     },[]);
@@ -24,7 +26,8 @@ export const AddLoads = () => {
     const retrieveValues = () => {
         LoadDataService.displayAllLoad()
             .then(response => {
-                setLoadData(response.data);
+                setLoads(response.data.load);
+                console.log(response.data.load)
             }).catch(e => {
             console.log(e);
         });
@@ -52,17 +55,6 @@ export const AddLoads = () => {
         }
     }
 
-    const deleteUser = (object) => {
-        console.log(object._id)
-        vehicleDataService.deleteVehicle(object._id).then(
-            response => {
-                console.log(response);
-                retrieveValues();
-            }
-        ).catch(e => {
-            console.log(e);
-        })
-    }
 
     const optionSize = [
         {value: '1', label: "Vehicle 1"},
@@ -135,7 +127,7 @@ export const AddLoads = () => {
                 <Link to="/" className="btn-submit btn-submit-cancel">Cancel</Link>
             </form>
         </div>
-            <LoadList array={loadData} deleteuser={deleteUser}/>
+            <LoadList array={loads}/>
         </div>
 
 

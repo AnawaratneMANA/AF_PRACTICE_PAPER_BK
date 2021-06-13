@@ -33,10 +33,10 @@ export const LoadList = ({array, sendSelectedUser, deleteUser}) => {
                     </tr>
                     </thead>
                     <tbody>
-                    {products.map((item) => (
+                    {array.map((item) => (
                             <tr>
                                 <td>{item._id}</td>
-                                <td>{item.name}</td>
+                                <td>{item.code}</td>
                             </tr>
                         )
                     )}
