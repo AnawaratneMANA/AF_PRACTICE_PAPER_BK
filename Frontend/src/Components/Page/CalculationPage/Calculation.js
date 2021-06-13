@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Calculation.css'
-import {AddVehicle} from "../../AddVehicle/addVehicle";
 import {Link} from "react-router-dom";
-import VehicleDataService from "../../../Service/vehicleDataService";
-import loadDataService from "../../../Service/loadDataService";
+import LoadDataService from "../../../Service/loadDataService";
 
 export const CalculationPage = () => {
 
@@ -14,10 +12,19 @@ export const CalculationPage = () => {
     });
 
 
+    const json = {
+        kilometers: '5',
+        costPerKm: '200',
+        noOfvehicles: '2'
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(calData)
-        loadDataService.Calculation(calData).then(
+        LoadDataService.Calculation({
+            "kilometers": 6,
+            "costPerKm": 200,
+            "noOfvehicles": 2
+        }).then(
             response => {
                 console.log(response.data);
                 alert(response.data);
