@@ -2,7 +2,7 @@ const {parentPort, workerData} = require("worker_threads");
     //Calculation will be done here.
     function calculationTripSum(){
         let total;
-        total = (workerData.data.charge * workerData.data.duration) * workerData.data.numVehicles;
+        total = (workerData.data.kilometers * workerData.data.costPerKm) * workerData.data.noOfvehicles;
         return total;
     }
     parentPort.on('message', (data)=> {

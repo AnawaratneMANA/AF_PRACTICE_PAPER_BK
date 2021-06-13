@@ -1,14 +1,14 @@
-const Category = require('../models/category.model');
+const Load = require('../models/load.model');
 const mongo = require('mongodb').MongoClient;
 const objectId = require('mongodb').ObjectID;
 const {Worker} = require('worker_threads');
 
-const createCategories = async (req, res) => {
+const createLoad = async (req, res) => {
     if (req.body) {
-        const category = new Category(req.body);
-        category.save().then(
+        const load = new Load(req.body);
+        load.save().then(
             data => {
-                res.status(200).send(data);
+                res.status(200).send({load: data});
             }
         ).catch(error => {
                 res.status(500).send({error: error.message})
@@ -18,25 +18,25 @@ const createCategories = async (req, res) => {
 }
 
 //Method to get vehicles in each category.
-const getVehiclesInCategory =async (req, res) => {
+const getLoadsInEachVehicleType =async (req, res) => {
     if(req.params && req.params.id){
-        const category = await Category.findById(req.params.id).populate('vehicles', 'name model code')
-            .then(data =>{
-                res.status(200).send({vehicles: data});
-            });
+        // const category = await Category.findById(req.params.id).populate('vehicles', 'name model code')
+        //     .then(data =>{
+        //         res.status(200).send({vehicles: data});
+        //     });
     }
 
 }
 
 //Get All Categories
-const GetAllCategories  = async(req, res) => {
-    const category = await Category.find()
-        .then(data => {res.status(200).send({categories: data});})
-        .catch(error => {res.status(500).send({ categories: error});});
+const GetAllLoads  = async(req, res) => {
+    const load = await Load.find()
+        .then(data => {res.status(200).send({load: data});})
+        .catch(error => {res.status(500).send({ load: error});});
 }
 
 //Implementing the trip charge calculation service.
-const CalculateTripCharge = async (req, res) => {
+const CalculateLoadCharge = async (req, res) => {
 
         const worker = new Worker("./calculations/chargeCalculationWorker.js", {workerData: {data:req.body}});
         worker.on('message',(data)=> {
@@ -62,8 +62,8 @@ const vehiclesInEachCategory = async (req, res) =>{
 }
 
 module.exports = {
-    createCategories,
-    getVehiclesInCategory,
-    GetAllCategories,
-    CalculateTripCharge
+    createLoad,
+    getLoadsInEachVehicleType,
+    GetAllLoads,
+    CalculateLoadCharge
 }

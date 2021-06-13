@@ -7,7 +7,7 @@ const createVehicle = async (req, res) => {
         const vehicle = new Vehicle(req.body);
         vehicle.save().then(
             data => {
-                res.status(200).send(data);
+                res.status(200).send({vehicle: data});
             }
         ).catch(error => {
                 res.status(500).send({error: error.message})
@@ -23,7 +23,21 @@ const GetAllVehicles  = async(req, res) => {
         .catch(error => {res.status(500).send({ vehicles: error});});
 }
 
+//Delete Vehicles
+//Simple Delete Method.
+const DeleteVehicles = async (req, res) => {
+    console.log(req.params.id)
+    const deleted = Vehicle.deleteOne(
+        {"_id": objectId(req.params.id)},
+    )
+        .then(data => {res.status(200).send({data: data});})
+        .catch(error => {res.status(500).send({ error: error});})
+}
+
+
+
 module.exports = {
     createVehicle,
-    GetAllVehicles
+    GetAllVehicles,
+    DeleteVehicles
 }
