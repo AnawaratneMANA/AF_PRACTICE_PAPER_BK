@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './editAndView.css'
 import {EditUser} from "../../EditUser/editUser";
 import {UserList} from "../../UserList/userList";
-import UserDataService from '../../../Service/userDataService';
+import UserDataService from '../../../Service/vehicleDataService';
 
 export const EditAndView = () => {
 
@@ -15,7 +15,7 @@ export const EditAndView = () => {
 
 
     const retrieveValues = () => {
-        UserDataService.displayAllUsers()
+        UserDataService.displayAllVehicles()
             .then(response => {
                 setUsers(response.data.user);
             }).catch(e => {
@@ -29,7 +29,7 @@ export const EditAndView = () => {
 
     const deleteUser = (object) => {
         console.log(object._id)
-        UserDataService.deleteUsers(object._id).then(
+        UserDataService.deleteVehicle(object._id).then(
             response => {
                 console.log(response);
                 retrieveValues();

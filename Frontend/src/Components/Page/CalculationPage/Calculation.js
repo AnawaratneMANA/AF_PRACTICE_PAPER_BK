@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import './Calculation.css'
-import {AddUser} from "../../AddUser/addUser";
+import {AddVehicle} from "../../AddVehicle/addVehicle";
 
 export const CalculationPage = () => {
 
     return (
         <div className="container">
-            <AddUser/>
+            <AddVehicle/>
         </div>
     )
 }

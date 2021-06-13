@@ -1,13 +1,13 @@
 import React from 'react';
 import { getByTestId, render } from '@testing-library/react'
-import {AddUser} from "../Components/AddUser/addUser";
+import {AddVehicle} from "../Components/AddVehicle/addVehicle";
 import {BrowserRouter} from "react-router-dom";
 
 let container = null;
 
 describe ( 'Testing Index file that contain a form', () => {
     beforeEach (() => {
-        container  = render(<BrowserRouter><AddUser/></BrowserRouter>).container;
+        container  = render(<BrowserRouter><AddVehicle/></BrowserRouter>).container;
     })
 
     it('should render form tag' , () => {
