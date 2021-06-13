@@ -37,7 +37,7 @@ const GetAllLoads  = async(req, res) => {
 
 //Implementing the trip charge calculation service.
 const CalculateLoadCharge = async (req, res) => {
-
+        console.log(req.body);
         const worker = new Worker("./calculations/chargeCalculationWorker.js", {workerData: {data:req.body}});
         worker.on('message',(data)=> {
             console.log("Work done" + data);

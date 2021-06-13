@@ -10,6 +10,11 @@ class LoadDataService {
         return http.get("/load/display");
     }
 
+    Calculation(object){
+
+        return http.get("/load/calculation", object);
+    }
+
 }
 
 export default new LoadDataService();
