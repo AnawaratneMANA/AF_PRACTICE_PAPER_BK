@@ -1,4 +1,4 @@
-BK-END/node_modules/
-FR-END/node_modules/
-BK-END/.env
+Backend/node_modules/
+Frontend/node_modules/
+Backend/.env
 .idea
